@@ -52,7 +52,7 @@ t.stream(
                 else if (tweet.entities.urls[0].url !=  " ") {
                     url = tweet.entities.urls[0].url;
                     }
-                    console.log(url);
+                    //console.log(url);
                    
                     client.incr(url); 
                 

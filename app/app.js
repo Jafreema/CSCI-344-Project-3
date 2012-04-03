@@ -12,12 +12,23 @@ var express = require('express')
 var terms = ['awesome', 'cool', 'rad', 'gnarly', 'groovy'];
 
 
+
 var t = new TwitterWorker(terms);
 
 //this redis client listens for messages
 var listener = redis.createClient();
 
 var app = module.exports = express.createServer();
+
+listener.keys('*', function(err,keys){
+  listener.mget(keys, function(err, values){
+    
+    keys.forEach(function(key){
+    console.log(keys);
+    
+  });
+  });
+});
 
 // Configuration
 

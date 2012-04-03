@@ -5,6 +5,7 @@
 var TwitterWorker = require('./workers/twitter2.js');
 var io = require('socket.io');
 var redis = require('redis');
+var ejs = require('ejs');
 var express = require('express')
   , routes = require('./routes');
 

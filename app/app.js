@@ -2,7 +2,7 @@
 /**
  * Module dependencies.
  */
-var TwitterWorker = require('./workers/twitter2.js');
+var TwitterWorker = require('./workers/twitter.js');
 var io = require('socket.io');
 var redis = require('redis');
 var ejs = require('ejs');
@@ -42,7 +42,10 @@ app.get('/', function(req, res) {
     res.render('index.ejs', { terms: terms });
 });
 app.get('/awesome', routes.awesome);
-
+app.get('/cool', routes.cool);
+app.get('/rad', routes.rad);
+app.get('/gnarly', routes.gnarly);
+app.get('/groovy', routes.groovy);
 //app.get('/', routes.index);
 
 app.listen(3000);

@@ -33,7 +33,13 @@ function TwitterWorker(terms) {
 	{track: terms},
 	function(stream) {
             stream.on('data', function(tweet) {
-		console.log(tweet.text);
+       			console.log(tweet.text);
+            	if(tweet.entities.urls[0].expanded_url === " "){
+            		console.log(tweet.text);}
+            		else {
+            		var url = tweet.entities.urls[0].expanded_url;
+		console.log(url);
+	}
 		terms.forEach(function(term)  {
 		    if(tweet.text.match(new RegExp(term), 'i')) update(term);
 		});

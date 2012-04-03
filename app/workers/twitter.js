@@ -6,13 +6,13 @@ var credentials = require('./credentials.js');
 //create redis client      
 function TwitterWorker(terms) {                                                                                                                                                                                                                 
 var client = redis.createClient();
-
+var words;
 //if the 'awesome' key doesn't exist, create it                                                                                                                                                                                             
 client.exists('awesome', function(error, exists) {
     if(error) {
         console.log('ERROR: '+error);
     } else if(!exists) {
-       client.set('word', 0);
+        //cilent.set('word', );
         client.set('awesome', 0); //create the awesome key
     };
 });
@@ -24,7 +24,7 @@ var t = new twitter({
     access_token_secret: credentials.access_token_secret
 });
 
-/*
+
  var update = function(key) {
     client.incr(key, function(err, result) {
         if(err) {
@@ -35,7 +35,7 @@ var t = new twitter({
         }
     });
     };
-    */
+    
 
 t.stream(
     'statuses/filter',
@@ -45,6 +45,7 @@ t.stream(
            // console.log(tweet.text);
             //if awesome is in the tweet text, increment the counter                                                                                                                                                                        
                 try {
+                    
                 if (tweet.entities.urls[0].expanded_url != " ") { 
                     url = tweet.entities.urls[0].expanded_url; 
                     }
@@ -53,8 +54,10 @@ t.stream(
                     }
                     console.log(url);
                    
-                    client.zincrby(word, 1, url); 
-                }
+                    client.incr(url); 
+                
+            }
+                
                 catch (error) {
                 }
 

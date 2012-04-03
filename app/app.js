@@ -3,13 +3,14 @@
  * Module dependencies.
  */
 var TwitterWorker = require('./workers/twitter.js');
-var io = require('socket.io');
+//var io = require('socket.io');
 var redis = require('redis');
 var ejs = require('ejs');
 var express = require('express')
   , routes = require('./routes');
 
 var terms = ['awesome', 'cool', 'rad', 'gnarly', 'groovy'];
+
 
 var t = new TwitterWorker(terms);
 
@@ -51,7 +52,7 @@ app.get('/groovy', routes.groovy);
 app.listen(3000);
 console.log("Express server listening on port %d in %s mode", app.address().port, app.settings.env);
 
-var sockets = io.listen(app);
+/*var sockets = io.listen(app);
 
 sockets.on('connection', function (socket) {
     listener.subscribe('update')
@@ -61,4 +62,4 @@ sockets.on('connection', function (socket) {
   socket.emit('update', { key:message.key, count: message.count });
     });
 });
-
+*/

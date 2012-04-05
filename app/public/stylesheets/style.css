@@ -1,8 +1,32 @@
 body {
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 18px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+#container{
+align:center;
+border: 1px solid ;
+padding: 5px;
+background-color:#CCCCCC;
 }
 
 a {
   color: #00B7FF;
 }
+
+#title {
+
+	}
+#header {
+    border: 1px solid ;
+    padding: 5px;
+	align:center;
+	background-color:#5588BB;
+	}
+#links {
+	  font: 18px "Lucida Grande", Helvetica, Arial, sans-serif;
+	  color:red;
+	  position:relative;
+	  top:10px;
+	  left:20px;
+	}

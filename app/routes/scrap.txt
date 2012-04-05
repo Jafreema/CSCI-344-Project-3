@@ -1,0 +1,9 @@
+listener.keys('*', function(err,keys){
+  listener.mget(keys, function(err, values){
+    
+    keys.forEach(function(key){
+    console.log(keys);
+    
+  });
+  });
+});

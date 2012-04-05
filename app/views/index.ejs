@@ -1,6 +1,5 @@
-<b>Hello from Express!!</b> <br/>
 
 <% terms.forEach(function(term) { %>
-   <p><b><a href="/<%= term %>"> <%=term %> </b> <span id='<%= term %>'></span></p> <br />
+   <p><b><a href="/<%= term %>" class="btn"> <%=term %> </b></a> <span id='<%= term %>'></span></p> <br />
 
 <% }); %>

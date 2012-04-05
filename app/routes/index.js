@@ -1,5 +1,6 @@
 
-
+var redis = require('redis');
+var client = redis.createClient();
 /*
  * GET home page.
  */
@@ -11,6 +12,7 @@ exports.index = function(req, res){
 
 exports.awesome = function(req, res){
   res.render('awesome.ejs', { title: 'awesome' })
+ 
 };
 
 exports.cool = function(req, res){

@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
-  	<link rel="stylesheet" type="text/css" href="/public/stylesheets/style.css">
-    <script src="socket.io/socket.io.js"></script>
+    <link href='/stylesheets/style.css' rel="stylesheet">
+    <link rel="stylesheet" href="http://twitter.github.com/bootstrap/1.4.0/bootstrap.min.css"/>
+  <link href='http://fonts.googleapis.com/css?family=Ubuntu:500|Oswald' rel='stylesheet' type='text/css'>
+  <script src="socket.io/socket.io.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
     <script>var socket = io.connect("localhost");
       socket.on("update", function(data) {
@@ -11,6 +13,19 @@
     </script>
   </head>
   <body>
-    <%- body %>
+      <div id="container">
+      <div id="header">
+            <b><h1>Select a term to see links associated with it!!</h1></b>
+      </div>
+      
+      <div class="row">
+        <div class="span6 offset4">
+          <br>
+          <div id="links">
+            <%- body %>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
